@@ -16,7 +16,7 @@ import h5py
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 
-from ViT_memory import VT_MCNet_Memory
+from MT_MCNet import MT_MCNet
 
 
 def forward_no_memory(model, inputs, supports_update_memory):
@@ -179,7 +179,7 @@ def load_model(
     use_dataparallel=False,
     strict_load=True
 ):
-    model = VT_MCNet_Memory(
+    model = MT_MCNet(
         num_classes=num_classes,
         embed_dim=embed_dim,
         depth=depth,
